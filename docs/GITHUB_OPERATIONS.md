@@ -1,6 +1,6 @@
-# GitHub Operations — v1.1.0-rc5
+# GitHub Operations — v1.1.0
 
-AITP v1.1.0-rc5 is a public-release candidate with a static GitHub Pages experience and a local-first research Laboratory.
+AITP v1.1.0 is the stable public-release baseline with a static GitHub Pages experience and a local-first research Laboratory.
 
 ## Candidate workflow
 

@@ -4,7 +4,7 @@ import hashlib,json,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'release'
 EXCLUDE_TOP={'.git','release','work','private','sessions','raw-data','participant-data'};EXCLUDE_NAMES={'__pycache__','.DS_Store'}
-FIXED_TIME=(2026,10,31,0,0,0);ARTIFACT='anomalous-information-test-protocol-v1.1.0-rc5.zip'
+FIXED_TIME=(2026,10,31,0,0,0);ARTIFACT='anomalous-information-test-protocol-v1.1.0.zip'
 def included_files():
     for p in sorted(ROOT.rglob('*')):
         if not p.is_file():continue

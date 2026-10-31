@@ -36,3 +36,22 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Production readback
+        shell: bash
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            if html=$(curl --fail --silent --show-error --location --max-time 20 "$PAGE_URL"); then
+              printf '%s' "$html" | grep -Fq 'Test the claim.'
+              printf '%s' "$html" | grep -Fq 'Preserve the evidence.'
+              curl --fail --silent --show-error --location --max-time 20 "${PAGE_URL}app.js" >/dev/null
+              curl --fail --silent --show-error --location --max-time 20 "${PAGE_URL}styles.css" >/dev/null
+              echo "PASS — production Pages readback: $PAGE_URL"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'FAIL — deployed Pages URL did not become readable within the bounded retry window' >&2
+          exit 1

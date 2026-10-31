@@ -105,7 +105,7 @@ class LabHandler(BaseHTTPRequestHandler):
         if not self._guard_host(): return
         path=urlparse(self.path).path
         try:
-            if path=="/api/health": return self._json({"ok":True,"version":"1.1.0-rc5","workspace":str(self.workspace),"network":"loopback-only","telemetry":False,"laboratory_scope":"DRY_RUN"})
+            if path=="/api/health": return self._json({"ok":True,"version":"1.1.0","workspace":str(self.workspace),"network":"loopback-only","telemetry":False,"laboratory_scope":"DRY_RUN"})
             if path=="/api/trials":
                 base=self.workspace/"trials"; base.mkdir(parents=True,exist_ok=True)
                 return self._json({"ok":True,"trials":[_trial_state(p) for p in sorted(base.iterdir(),reverse=True) if p.is_dir()]})
