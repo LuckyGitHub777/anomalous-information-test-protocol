@@ -10,6 +10,12 @@ A first-time visitor should understand:
 
 The experience never requires belief in an extraordinary explanation.
 
+## Value promise
+
+A completed AITP workflow should leave the user with four concrete things: an evidence packet, an audit verdict, an analysis-ready record, and a clear interpretation boundary. The Prediction Ledger adds a fifth repeat-use asset: an immutable claim plus append-only adjudication.
+
+The public experience should make that value understandable before asking anyone to install software. The Laboratory should make the same value tangible without exposing the operator to JSON or cryptographic machinery unless they ask for it.
+
 ## Complete journey
 
 **Discover → Understand → Experience → Trust → Inspect → Run locally → Test → Audit → Adjudicate → Replicate → Return**
