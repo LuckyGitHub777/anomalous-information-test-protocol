@@ -10,8 +10,6 @@ on:
       - "tools/browser_uat.py"
       - "tools/browser_uat_live.py"
       - ".github/workflows/browser-uat.yml"
-      - ".github/workflows/publish-v1.1.0.yml"
-      - "tools/finalize_release_v1_1_0.py"
   pull_request:
     branches: [main]
     paths:
