@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aitp-research"
+version = "1.1.0rc1"
+description = "Offline-first toolkit for prospective hidden-information testing with blinded, tamper-evident evidence controls"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+aitp = "aitp.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

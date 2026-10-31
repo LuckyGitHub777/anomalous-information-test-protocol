@@ -1,0 +1,12 @@
+{
+  "anchor_artifact_sha256": "REPLACE_WITH_SHA256_OF_PUBLIC_ANCHOR_JSON",
+  "external_reference": "https://example.invalid/independent-record-or-reference",
+  "anchored_at_utc": "2026-08-13T10:00:00Z",
+  "evidence_class": "THIRD_PARTY_REFERENCE",
+  "human_review": {
+    "status": "VERIFIED_BY_HUMAN",
+    "reviewer_id": "REPLACE_WITH_REVIEWER_ID",
+    "verified_at_utc": "2026-08-13T10:05:00Z",
+    "note": "Human reviewer independently checked the external reference. AITP does not cryptographically verify the third-party system."
+  }
+}

@@ -1,0 +1,32 @@
+name: Protocol defect
+description: Report a leakage, blinding, scoring, provenance, or inference weakness
+title: "[PROTOCOL] "
+labels: ["protocol"]
+body:
+  - type: dropdown
+    id: class
+    attributes:
+      label: Defect class
+      options:
+        - Information leakage
+        - Cueing
+        - Artifact mutation
+        - Scoring flexibility
+        - Statistical flexibility
+        - Provenance
+        - Privacy / human subjects
+        - Claims / ontology overreach
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: weak_link
+    attributes:
+      label: Weak link
+      description: Explain how the defect could change a result or interpretation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed corrective test or control

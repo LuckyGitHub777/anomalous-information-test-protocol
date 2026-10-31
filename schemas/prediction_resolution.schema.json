@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/aitp/prediction_resolution.schema.json",
+  "title": "AITP Prediction Resolution v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "prediction_id",
+    "prediction_frozen_sha256",
+    "prediction_content_sha256",
+    "disposition",
+    "outcome_summary",
+    "evidence_reference",
+    "adjudicator",
+    "resolved_at_utc_untrusted_local",
+    "interpretation_boundary",
+    "resolution_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "AITP-PRED-1.1"
+    },
+    "prediction_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prediction_frozen_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "prediction_content_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "disposition": {
+      "enum": [
+        "SUCCESS",
+        "FAILURE",
+        "AMBIGUOUS",
+        "NOT_YET_DETERMINABLE"
+      ]
+    },
+    "outcome_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_reference": {
+      "type": "string"
+    },
+    "adjudicator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resolved_at_utc_untrusted_local": {
+      "type": "string"
+    },
+    "interpretation_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "resolution_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

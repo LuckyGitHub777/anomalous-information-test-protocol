@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: src
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.13", "3.14"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Compile
+        run: python -m compileall -q src tests tools run_aitp.py run_lab.py run_site.py
+      - name: Unit and end-to-end tests
+        run: python -m unittest discover -s tests -v
+      - name: Overclaim tripwire
+        run: python tools/overclaim_tripwire.py
+      - name: Adversarial release-blocker regressions
+        run: python tools/adversarial_vv.py
+      - name: Repository boundary lint
+        run: python tools/repo_boundary_lint.py
+      - name: Secret-pattern lint
+        run: python tools/secret_lint.py
+      - name: Public and Laboratory UX structure lint
+        run: python tools/site_lint.py
+      - name: JavaScript syntax
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.13'
+        run: node --check site/app.js && node --check web/app.js
+      - name: Deterministic release build
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.13'
+        run: python tools/release_build.py

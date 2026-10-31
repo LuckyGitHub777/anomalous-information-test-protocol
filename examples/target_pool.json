@@ -1,0 +1,42 @@
+[
+  {
+    "id": "T001",
+    "label": "Red lighthouse",
+    "content": "A red lighthouse on a rocky coast at dusk."
+  },
+  {
+    "id": "T002",
+    "label": "Glass greenhouse",
+    "content": "A glass greenhouse filled with tropical plants."
+  },
+  {
+    "id": "T003",
+    "label": "Snowy bridge",
+    "content": "A stone bridge crossing a snowy river."
+  },
+  {
+    "id": "T004",
+    "label": "Yellow balloon",
+    "content": "A yellow hot-air balloon above farmland."
+  },
+  {
+    "id": "T005",
+    "label": "Blue staircase",
+    "content": "A blue spiral staircase inside a white tower."
+  },
+  {
+    "id": "T006",
+    "label": "Desert telescope",
+    "content": "A large telescope observatory in a dry desert."
+  },
+  {
+    "id": "T007",
+    "label": "Wooden canoe",
+    "content": "A wooden canoe floating on a still forest lake."
+  },
+  {
+    "id": "T008",
+    "label": "Clock workshop",
+    "content": "A workshop wall covered with mechanical clocks."
+  }
+]

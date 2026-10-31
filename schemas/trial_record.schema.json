@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/aitp/trial_record.schema.json",
+  "title": "AITP Audited Trial Record v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trial_id",
+    "condition",
+    "candidate_count",
+    "true_target_id",
+    "judge_rank_1",
+    "commitment_verified",
+    "candidate_packet_verified",
+    "response_freeze_verified",
+    "judgment_freeze_verified",
+    "protocol_status",
+    "ledger_sequence_verified",
+    "ledger_payloads_verified",
+    "inference_eligibility",
+    "anchor_receipt_present",
+    "anchor_artifact_hash_matches",
+    "anchor_chronology_consistent",
+    "anchor_evidence_class",
+    "anchor_human_review_recorded",
+    "anchor_tool_validation_level",
+    "anchor_sufficient_for_formal_analysis",
+    "anchor_note",
+    "anchor_ledger_binding_verified",
+    "anchor_formal_sequence_verified",
+    "anchor_formal_sequence_note"
+  ],
+  "properties": {
+    "trial_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "condition": {
+      "enum": [
+        "BASELINE",
+        "CLAIMED_CHANNELING",
+        "CONTROL",
+        "DRY_RUN"
+      ]
+    },
+    "candidate_count": {
+      "type": "integer",
+      "minimum": 2
+    },
+    "true_target_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "judge_rank_1": {
+      "type": "string",
+      "minLength": 1
+    },
+    "commitment_verified": {
+      "type": "boolean"
+    },
+    "candidate_packet_verified": {
+      "type": "boolean"
+    },
+    "response_freeze_verified": {
+      "type": "boolean"
+    },
+    "judgment_freeze_verified": {
+      "type": "boolean"
+    },
+    "protocol_status": {
+      "enum": [
+        "VALID",
+        "INVALID_LEAKAGE",
+        "INVALID_DEVIATION",
+        "INVALID_INTEGRITY",
+        "INVALID_NO_EXTERNAL_ANCHOR",
+        "INVALID_ANCHOR_EVIDENCE",
+        "INVALID_ANCHOR_INTEGRITY"
+      ]
+    },
+    "contamination_notes": {
+      "type": "string"
+    },
+    "deviation_notes": {
+      "type": "string"
+    },
+    "ledger_sequence_verified": {
+      "type": "boolean"
+    },
+    "ledger_payloads_verified": {
+      "type": "boolean"
+    },
+    "inference_eligibility": {
+      "enum": [
+        "NONE",
+        "MECHANICAL_VALIDATION_ONLY",
+        "ELIGIBLE_FOR_PREREGISTERED_ANALYSIS_WITH_RECORDED_HUMAN_ANCHOR_REVIEW"
+      ]
+    },
+    "anchor_receipt_present": {
+      "type": "boolean"
+    },
+    "anchor_artifact_hash_matches": {
+      "type": "boolean"
+    },
+    "anchor_chronology_consistent": {
+      "type": "boolean"
+    },
+    "anchor_evidence_class": {
+      "enum": [
+        "NONE",
+        "SELF_ATTESTED",
+        "THIRD_PARTY_REFERENCE",
+        "RFC3161_TOKEN",
+        "CHAIN_TXID"
+      ]
+    },
+    "anchor_human_review_recorded": {
+      "type": "boolean"
+    },
+    "anchor_sufficient_for_formal_analysis": {
+      "type": "boolean"
+    },
+    "anchor_note": {
+      "type": "string"
+    },
+    "anchor_tool_validation_level": {
+      "const": "REFERENCE_NOT_VALIDATED_BY_TOOL"
+    },
+    "anchor_ledger_binding_verified": {
+      "type": "boolean"
+    },
+    "anchor_formal_sequence_verified": {
+      "type": "boolean"
+    },
+    "anchor_formal_sequence_note": {
+      "type": "string"
+    }
+  }
+}

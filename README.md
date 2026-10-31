@@ -22,7 +22,7 @@ A static, synthetic, zero-telemetry demonstration that teaches the method by exp
 python run_site.py
 ```
 
-![AITP public experience](docs/assets/screenshots/public-home.png)
+The public experience is the static application in [`site/`](site/).
 
 ### AITP Laboratory
 
@@ -34,7 +34,7 @@ python run_lab.py
 
 Windows: double-click `AITP_LAB.cmd`.
 
-![AITP Laboratory](docs/assets/screenshots/laboratory-home.png)
+The local Laboratory interface is in [`web/`](web/) and is served by the Python core.
 
 Formal anchored studies remain available through the core/CLI, where anchor evidence can be recorded and reviewed explicitly. The guided Laboratory intentionally exposes only `DRY_RUN` until formal anchor handling can be represented without overstating what the software verifies.
 
@@ -124,8 +124,8 @@ See [`docs/GENERALIZED_CLAIM_TESTING.md`](docs/GENERALIZED_CLAIM_TESTING.md).
 - [GitHub operations](docs/GITHUB_OPERATIONS.md)
 - [Hosted UAT checklist](docs/HOSTED_UAT_CHECKLIST.md)
 - [Security](SECURITY.md)
-- [v1.1 V&V report](docs/VV_REPORT_v1.1.0-rc2.md)
-- [v1.1 closure matrix](docs/VV_CLOSURE_MATRIX_v1.1.0-rc2.md)
+- [v1.1 V&V report](docs/VV_REPORT_v1.1.0-rc4.md)
+- [v1.1 closure matrix](docs/VV_CLOSURE_MATRIX_v1.1.0-rc4.md)
 - [Historical v1.0 V&V](docs/VV_REPORT_v1.0.0.md)
 
 ## Privacy
@@ -134,7 +134,7 @@ Public-site data is synthetic. Local Laboratory working state is written under i
 
 ## Release state
 
-**v1.1.0-rc2 — corrective public-release candidate.**
+**v1.1.0-rc4 — corrective public-release candidate.**
 
 Local automated, adversarial, and rendered browser gates must pass on the exact candidate. Public release is complete only after the same candidate also passes GitHub-hosted CI, Browser UAT, CodeQL review where applicable, Pages deployment, production readback, and human claims/UAT sign-off.
 

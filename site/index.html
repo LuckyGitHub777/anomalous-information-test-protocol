@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="AITP — a tamper-evident method for testing whether information existed before the answer was known.">
+  <meta name="theme-color" content="#0b0d10">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>AITP — Test the claim. Preserve the evidence.</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="#top" aria-label="AITP home"><span class="brand-mark">A</span><span><strong>AITP</strong><small>Anomalous Information Test Protocol</small></span></a>
+  <nav aria-label="Primary navigation">
+    <a href="#how">How it works</a><a href="#demo">Demo</a><a href="#uses">Use cases</a><a href="#ledger">Prediction ledger</a><a href="#inspect">Protocol</a>
+  </nav>
+  <a class="nav-cta" href="#laboratory">Run locally</a>
+</header>
+<main id="main">
+  <section class="hero" id="top">
+    <div class="orbital" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="shell hero-inner">
+      <p class="eyebrow">Evidence before explanation</p>
+      <h1>Test the claim.<br><em>Preserve the evidence.</em></h1>
+      <p class="lead">A tamper-evident method for testing whether information existed before the answer was known—without deciding what to believe first.</p>
+      <div class="actions"><a class="button primary" href="#demo">Try the demonstration</a><a class="button quiet" href="#laboratory">Run AITP locally</a></div>
+      <div class="trust"><span>No accounts</span><span>No telemetry</span><span>Synthetic public demo</span><span>Inspectable method</span></div>
+    </div>
+  </section>
+
+  <section id="how" class="section shell">
+    <div class="split-head"><div><p class="eyebrow">The problem</p><h2>The hardest question is often not <em>“Was it right?”</em></h2></div><p>It is: <strong>Can we prove the information existed before anyone knew what was correct?</strong> AITP protects the order of evidence so hindsight cannot quietly rewrite the story.</p></div>
+    <div class="sequence" aria-label="AITP lifecycle">
+      <article><b>01</b><h3>Lock the target</h3><p>The hidden answer is fixed first.</p><small>Cryptographic commitment</small></article>
+      <article><b>02</b><h3>Anchor chronology</h3><p>Formal trials record independent evidence that the commitment existed beforehand.</p><small>External timestamp / witness</small></article>
+      <article><b>03</b><h3>Seal the response</h3><p>The participant's response is frozen before candidates appear.</p><small>Artifact fingerprint</small></article>
+      <article><b>04</b><h3>Lock judgment</h3><p>The judge commits to a ranking before the correct target is revealed.</p><small>Blinded ranking</small></article>
+      <article><b>05</b><h3>Reveal & audit</h3><p>The system verifies integrity before results are eligible for analysis.</p><small>Fail-closed audit</small></article>
+    </div>
+  </section>
+
+  <section id="demo" class="section demo-wrap">
+    <div class="shell">
+      <div class="split-head"><div><p class="eyebrow">Two-minute demonstration</p><h2>Experience why the order matters.</h2></div><p>This browser demo uses synthetic targets and stays on this device. It teaches the protocol; it is <strong>not</strong> a research-grade trial or external timestamp.</p></div>
+      <div class="demo-card" id="demo-card">
+        <div class="demo-progress" aria-label="Demo progress"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span><i></i><span>4</span></div>
+        <div class="demo-panel active" data-demo-step="1">
+          <p class="step-label">Step 1 of 4</p><h3>A hidden target is ready.</h3><p class="demo-copy">Think of the answer as sealed in an envelope. The demonstration fixes it before you respond.</p>
+          <div class="seal-visual"><div class="seal-disc">A</div><div><small>Target state</small><strong>Committed</strong><code id="commit-preview">Preparing…</code></div></div>
+          <button class="button primary" id="demo-start">Continue</button>
+        </div>
+        <div class="demo-panel" data-demo-step="2">
+          <p class="step-label">Step 2 of 4</p><h3>Describe the hidden target.</h3><p class="demo-copy">Write impressions: shapes, colors, textures, setting, motion, temperature, or sounds. Do not search for an answer.</p>
+          <label for="demo-response">Your response</label><textarea id="demo-response" rows="7" placeholder="Example: tall vertical shape, near water, warm red color…"></textarea>
+          <p class="micro">Once sealed, the demo will not let you edit this response.</p><button class="button primary" id="seal-response">Seal response</button>
+        </div>
+        <div class="demo-panel" data-demo-step="3">
+          <p class="step-label">Step 3 of 4</p><h3>Rank the candidates.</h3><p class="demo-copy">Best match first. The correct target is still hidden.</p>
+          <div id="candidate-list" class="candidate-list" role="list" aria-label="Candidate ranking"></div><div id="ranking-live" class="sr-only" aria-live="polite"></div>
+          <p class="micro">Use Move up / Move down. Keyboard and touch both work.</p><button class="button primary" id="lock-ranking">Lock ranking</button>
+        </div>
+        <div class="demo-panel" data-demo-step="4">
+          <p class="step-label">Step 4 of 4</p><h3>Reveal.</h3>
+          <div class="reveal-grid"><div class="target-art" id="reveal-art" aria-hidden="true"></div><div><p class="eyebrow">True target</p><h4 id="reveal-label">—</h4><p id="reveal-detail">—</p></div></div>
+          <div class="integrity"><span>Target fixed first</span><span>Response sealed before candidates</span><span>Ranking sealed before reveal</span><span>Evidence fingerprints generated</span></div>
+          <div class="meaning"><small>What this result means</small><p id="demo-meaning"></p><strong>A single demonstration is not evidence of an anomalous information effect.</strong></div>
+          <details><summary>Technical fingerprints</summary><pre id="demo-tech"></pre></details>
+          <div class="actions"><button class="button primary" id="demo-again">Try another</button><a class="button quiet" href="#laboratory">See the real Laboratory</a></div>
+        </div>
+        <div class="live" id="demo-live" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="uses" class="section shell">
+    <div class="split-head"><div><p class="eyebrow">Use cases</p><h2>A general instrument for prospective claim verification.</h2></div><p>The hidden-information protocol is the core. The same evidence discipline can support other contexts where chronology, blinding, null models, and preregistration matter.</p></div>
+    <div class="use-grid">
+      <article><span>01</span><h3>Hidden-target research</h3><p>Test whether a participant identifies information unavailable through ordinary channels.</p></article>
+      <article><span>02</span><h3>Expert intuition</h3><p>Compare expert judgments against baseline or control conditions prospectively.</p></article>
+      <article><span>03</span><h3>AI forecasting</h3><p>Freeze model versions, outputs, scoring rules, and ground truth before results are known.</p></article>
+      <article><span>04</span><h3>Prediction integrity</h3><p>Preserve exact future-facing claims and adjudication rules before the outcome.</p></article>
+      <article><span>05</span><h3>Anomaly qualification</h3><p>Separate observation, conventional null models, confounders, and unexplained residuals.</p></article>
+      <article><span>06</span><h3>Reproducibility</h3><p>Preserve protocol state so independent teams can inspect and repeat the method.</p></article>
+    </div>
+  </section>
+
+  <section class="section boundary">
+    <div class="shell boundary-inner"><div><p class="eyebrow">The boundary</p><h2>A test is not a conclusion.</h2></div><div><p>An unusual result can justify further investigation. It does not, by itself, identify a source, mechanism, intelligence, or ontology.</p><div class="ladder"><span><b>H0</b> Ordinary explanation</span><span><b>H1</b> Condition difference</span><span><b>H2</b> Anomalous information effect</span><span><b>H3</b> Additional-agent model</span><span><b>H4</b> Specific source identity</span></div></div></div>
+  </section>
+
+  <section id="ledger" class="section shell">
+    <div class="split-head"><div><p class="eyebrow">Prediction Ledger demo</p><h2>Preserve what was actually predicted.</h2></div><p>Freeze exact wording, success, failure, and timing before the outcome. The public widget demonstrates the canonical content fingerprint; the local Laboratory can later adjudicate a frozen record. Formal chronology still requires independent anchor evidence.</p></div>
+    <div class="ledger-grid">
+      <form id="prediction-form" class="panel">
+        <label for="pred-wording">Exact wording</label><textarea id="pred-wording" rows="4" required placeholder="What exactly is being predicted?"></textarea>
+        <label for="pred-event">Target event</label><input id="pred-event" placeholder="What outcome is being predicted?">
+        <div class="two"><div><label for="pred-window">Outcome window</label><input id="pred-window" placeholder="e.g. By 2027-12-31"></div><div><label for="pred-source">Source</label><input id="pred-source" placeholder="Who made the prediction?"></div></div>
+        <label for="pred-success">What counts as success?</label><textarea id="pred-success" rows="3" required></textarea>
+        <label for="pred-failure">What counts as failure?</label><textarea id="pred-failure" rows="3" required></textarea>
+        <button class="button primary" type="submit">Freeze prediction</button>
+      </form>
+      <div class="panel ledger-output" id="prediction-output"><p class="eyebrow">Frozen record</p><h3>No prediction frozen yet.</h3><p>When you freeze one, the browser creates a deterministic fingerprint from the exact record.</p></div>
+    </div>
+  </section>
+
+  <section id="laboratory" class="section laboratory">
+    <div class="shell lab-public">
+      <div><p class="eyebrow">AITP Laboratory</p><h2>Serious work stays local.</h2><p>The full Laboratory runs on your computer. Real trial data does not need to be uploaded to a cloud service.</p>
+        <div class="terminal" role="group" aria-label="Launch command"><span>$</span><code>python run_lab.py</code><button id="copy-lab" aria-label="Copy launch command">Copy</button></div>
+        <p class="micro">Windows users can also double-click <code>AITP_LAB.cmd</code>.</p></div>
+      <div class="instrument"><div class="instrument-top"><span>AITP Laboratory</span><b>Local · Private</b></div><div class="instrument-body"><article><small>Study</small><strong>Create a test</strong></article><article><small>Participant</small><strong>Seal response</strong></article><article><small>Judge</small><strong>Lock ranking</strong></article><article><small>Evidence</small><strong>Verify trial</strong></article></div></div>
+    </div>
+  </section>
+
+  <section id="inspect" class="section shell inspect">
+    <div class="split-head"><div><p class="eyebrow">Inspectable by design</p><h2>Trust the record, not the storyteller.</h2></div><p>AITP publishes the protocol, threat model, tests, claims policy, and deterministic release evidence so technical reviewers can challenge the instrument itself.</p></div>
+    <div class="inspect-grid"><article><h3>Protocol</h3><p>Lifecycle, role boundaries, blinding, anchoring, audit, and analysis.</p><code>docs/PROTOCOL.md</code></article><article><h3>Threat model</h3><p>Information leakage, scoring flexibility, chronology, tampering, and human factors.</p><code>docs/THREAT_MODEL.md</code></article><article><h3>V&amp;V</h3><p>Automated tests, repository boundary checks, secret lint, site UAT, and deterministic builds.</p><code>docs/VV_REPORT_v1.1.0-rc4.md</code></article></div>
+    <div class="actions"><a class="button primary" id="github-link" href="#" rel="noopener">Inspect on GitHub</a><a class="button quiet" href="#demo">Try the demo again</a></div>
+  </section>
+</main>
+<footer><div class="shell footer"><div><strong>AITP</strong><p>Curiosity deserves a fair test.</p></div><div><a href="#how">Method</a><a href="#demo">Demo</a><a href="#laboratory">Laboratory</a><a href="#inspect">Evidence</a></div></div><div class="shell footer-note">Public demo uses synthetic data only. No telemetry. No accounts. No external assets.</div></footer>
+<div id="alert" class="alert" role="alert" aria-live="assertive" hidden></div><div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>

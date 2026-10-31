@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Test/cache
+.coverage
+.pytest_cache/
+.mypy_cache/
+
+# AITP local working material
+work/
+private/
+sessions/
+raw-data/
+participant-data/
+*.private.json
+PRIVATE_*.json
+
+# Generated releases
+release/
+*.zip
+*.tar.gz

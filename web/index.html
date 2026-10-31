@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="AITP Laboratory — local-first blinded information testing with tamper-evident evidence controls.">
+  <title>AITP Laboratory — v1.1.0-rc4</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="AITP Laboratory home">
+      <span class="mark" aria-hidden="true">A</span>
+      <span><strong>AITP</strong><small>Laboratory</small></span>
+    </a>
+    <nav aria-label="Primary">
+      <button class="nav-link active" data-route="home" aria-current="page">Overview</button>
+      <button class="nav-link" data-route="lab">Run a test</button>
+      <button class="nav-link" data-route="ledger">Prediction ledger</button>
+      <button class="nav-link" data-route="evidence">Evidence</button>
+    </nav>
+    <div class="local-pill"><span></span> Local · Private</div>
+  </header>
+
+  <main id="main">
+    <section class="view active" id="view-home" data-view="home">
+      <div class="hero shell">
+        <div class="eyebrow">Evidence before explanation</div>
+        <h1>Test the claim.<br><em>Preserve the truth.</em></h1>
+        <p class="hero-copy">A calm, local-first laboratory for testing hidden-information claims without deciding what to believe beforehand.</p>
+        <div class="hero-actions">
+          <button class="button primary" data-go="lab">Start a dry run</button>
+          <button class="button ghost" data-go="evidence">Review evidence</button>
+        </div>
+        <div class="trust-row" aria-label="Privacy and evidence properties">
+          <span>No cloud</span><span>No accounts</span><span>No telemetry</span><span>Auditable evidence</span>
+        </div>
+      </div>
+      <div class="shell principle-grid">
+        <article><span>01</span><h2>Commit first</h2><p>The hidden target is mathematically locked before anyone responds.</p></article>
+        <article><span>02</span><h2>Blind the humans</h2><p>The facilitator and judge receive only the information their roles require.</p></article>
+        <article><span>03</span><h2>Freeze the record</h2><p>Responses and judgments are sealed before the correct answer is revealed.</p></article>
+        <article><span>04</span><h2>Explain last</h2><p>The audit and statistics come before any claim about what caused the result.</p></article>
+      </div>
+      <div class="shell callout">
+        <div><span class="kicker">The boundary</span><h2>AITP tests whether an information effect exists. It does not tell you what the source is.</h2></div>
+        <p>One unusual result is not proof of psychic ability, nonhuman intelligence, channeling, or any supernatural mechanism. The method is designed to slow down that leap.</p>
+      </div>
+    </section>
+
+    <section class="view" id="view-lab" data-view="lab">
+      <div class="shell page-head"><div><span class="eyebrow">Guided dry run</span><h1>Run the protocol without touching the command line.</h1></div><p>One action per step. Technical evidence is generated underneath automatically.</p></div>
+      <div class="shell lab-layout">
+        <aside class="stepper" aria-label="Experiment steps">
+          <button data-step="1" class="step active" aria-current="step"><b>1</b><span>Design<small>Create the trial</small></span></button>
+          <button data-step="2" class="step" aria-disabled="true"><b>2</b><span>Participant<small>Capture response</small></span></button>
+          <button data-step="3" class="step" aria-disabled="true"><b>3</b><span>Judge<small>Rank candidates</small></span></button>
+          <button data-step="4" class="step" aria-disabled="true"><b>4</b><span>Reveal<small>Audit the result</small></span></button>
+        </aside>
+        <div class="stage card">
+          <div class="stage-panel active" data-panel="1">
+            <div class="stage-top"><div><span class="stage-label">Study designer</span><h2>Create a dry run</h2></div><span class="badge">No claim inferred</span></div>
+            <label>Trial name<input id="trial-label" value="Protocol dry run" maxlength="120"></label>
+            <div class="two-col">
+              <label>Condition<select id="trial-condition"><option value="DRY_RUN">Dry run</option></select></label>
+              <label>Candidate targets<select id="candidate-count"><option>3</option><option selected>4</option><option>5</option><option>6</option></select></label>
+            </div>
+            <p class="microcopy">The guided Laboratory intentionally supports <strong>dry runs only</strong>. Formal Baseline, Control, or other anchored conditions use the core/CLI workflow until third-party anchor evidence can be handled without overstating verification.</p>
+            <div class="info-strip"><strong>What happens:</strong> A hidden synthetic target is selected and committed. The answer remains private while the workflow exercises the evidence chain.</div>
+            <button class="button primary wide" id="create-trial">Create trial</button>
+          </div>
+
+          <div class="stage-panel" data-panel="2">
+            <div class="stage-top"><div><span class="stage-label">Participant session</span><h2>Describe the hidden target</h2></div><span class="badge secure">Target hidden</span></div>
+            <p class="prompt">Write only what you perceive or infer. Do not try to explain it. Concrete sensory details are more useful than interpretation.</p>
+            <label class="sr-only" for="response-text">Participant response</label>
+            <textarea id="response-text" rows="10" placeholder="Example: Tall narrow structure. Open horizon. Strong red color. Water or reflective surface nearby..."></textarea>
+            <div class="info-strip"><strong>When sealed:</strong> the response receives a SHA-256 fingerprint. Candidate targets cannot be released before this step succeeds.</div>
+            <label class="confirm-row"><input type="checkbox" id="confirm-response-seal"><span>I understand this response cannot be edited after sealing.</span></label>
+            <button class="button primary wide" id="seal-response">Seal response</button>
+          </div>
+
+          <div class="stage-panel" data-panel="3">
+            <div class="stage-top"><div><span class="stage-label">Blinded judge</span><h2>Rank the candidate targets</h2></div><span class="badge secure">Answer hidden</span></div>
+            <p class="prompt" id="judge-response"></p>
+            <div id="candidate-list" class="candidate-list" role="list" aria-label="Candidate ranking"></div><div id="ranking-live" class="sr-only" aria-live="polite"></div>
+            <p class="microcopy">Put the best match first. The true target is still hidden.</p>
+            <label class="confirm-row"><input type="checkbox" id="confirm-judgment-seal"><span>I understand this ranking is final for this trial once locked.</span></label>
+            <button class="button primary wide" id="seal-judgment">Lock ranking</button>
+          </div>
+
+          <div class="stage-panel" data-panel="4">
+            <div class="stage-top"><div><span class="stage-label">Evidence review</span><h2 id="result-title">Trial complete</h2></div><span class="badge" id="result-badge">Audit pending</span></div>
+            <div id="result-target" class="reveal-card"></div>
+            <div id="integrity-checks" class="integrity-grid"></div>
+            <div class="interpretation"><span>What this means</span><p id="result-meaning">One trial cannot establish anomalous information transfer. The result is preserved as evidence for the study, not as an explanation of its cause.</p></div>
+            <details><summary>Technical evidence</summary><pre id="technical-result"></pre></details>
+            <button class="button ghost wide" id="new-trial">Run another dry run</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-ledger" data-view="ledger">
+      <div class="shell page-head"><div><span class="eyebrow">Prospective claim verification</span><h1>Freeze what was said before reality answers.</h1></div><p>Useful for forecasts, contact claims, AI predictions, expert judgment, and any future-facing statement that should not be rewritten later.</p></div>
+      <div class="shell ledger-grid">
+        <form class="card form-card" id="prediction-form">
+          <h2>Freeze a prediction</h2>
+          <label>Exact wording<textarea id="pred-wording" rows="4" required placeholder="Record the claim exactly as stated."></textarea></label>
+          <label>Source<input id="pred-source" placeholder="Person, document, session, model..."></label>
+          <div class="two-col"><label>Target event<input id="pred-event" placeholder="What outcome is being predicted?"></label><label>Time window<input id="pred-window" placeholder="e.g. by 2027-12-31"></label></div>
+          <label>What counts as success?<textarea id="pred-success" rows="3" required></textarea></label>
+          <label>What counts as failure?<textarea id="pred-failure" rows="3" required></textarea></label>
+          <label class="confirm-row"><input type="checkbox" id="confirm-prediction-freeze"><span>I understand the prediction wording and criteria will be frozen and not edited in place.</span></label>
+          <button class="button primary wide" type="submit">Freeze prediction</button>
+        </form>
+        <div class="card ledger-list"><div class="stage-top"><div><span class="stage-label">Frozen + adjudicated records</span><h2>Prediction ledger</h2></div></div><p class="microcopy">Frozen predictions are never edited in place. Adjudication is written as a separate, hash-bound resolution record.</p><div id="prediction-list"></div></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-evidence" data-view="evidence">
+      <div class="shell page-head"><div><span class="eyebrow">Evidence cabinet</span><h1>Every trial has a state, an audit, and a boundary.</h1></div><p>Inspect what happened without needing to read raw JSON unless you want to.</p></div>
+      <div class="shell"><div class="card evidence-card"><div class="evidence-head"><span>Local trials</span><button class="button tiny ghost" id="refresh-evidence">Refresh</button></div><div id="trial-list"></div></div></div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><div><strong>AITP Laboratory</strong><p>Evidence before explanation.</p></div><div><span>Local-first</span><span>Offline-capable</span><span>Zero telemetry</span></div></div></footer>
+  <div id="alert" class="alert" role="alert" aria-live="assertive" hidden></div><div id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

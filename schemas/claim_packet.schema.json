@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/aitp/claim_packet.schema.json",
+  "title": "AITP Claim Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "claimant",
+    "date_time",
+    "exact_wording",
+    "source_artifact",
+    "source_sha256",
+    "record_type",
+    "status"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claimant": {
+      "type": "string",
+      "minLength": 1
+    },
+    "speaker_identity_as_claimed": {
+      "type": "string"
+    },
+    "date_time": {
+      "type": "string"
+    },
+    "venue_or_source": {
+      "type": "string"
+    },
+    "exact_wording": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_artifact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "record_type": {
+      "enum": [
+        "OBSERVATION",
+        "REPORT",
+        "CLAIM",
+        "INTERPRETATION",
+        "SPIRITUAL_INTERPRETATION",
+        "HYPOTHESIS",
+        "PREDICTION",
+        "EXPERIMENT",
+        "RESULT",
+        "REPLICATION",
+        "ANOMALY",
+        "WORKING_KNOWLEDGE"
+      ]
+    },
+    "semantic_type": {
+      "enum": [
+        "PLAIN",
+        "METAPHORICAL",
+        "PHENOMENOLOGICAL",
+        "MATHEMATICAL",
+        "PHYSICAL_MEASURABLE"
+      ]
+    },
+    "testability": {
+      "enum": [
+        "NOT_TESTABLE",
+        "PARTIALLY_TESTABLE",
+        "TESTABLE"
+      ]
+    },
+    "conditions": {
+      "type": "string"
+    },
+    "known_alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supporting_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contradictory_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "RECEIVED",
+        "FROZEN",
+        "UNDER_TEST",
+        "SUPPORTED",
+        "CONTRADICTED",
+        "UNRESOLVED",
+        "SUPERSEDED"
+      ]
+    },
+    "human_adjudicator": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
