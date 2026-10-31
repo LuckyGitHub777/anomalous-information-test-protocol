@@ -8,6 +8,12 @@ This repository preserves the engineering lineage needed to understand the metho
 
 Private originating non-empirical or strategic project context is intentionally excluded because it is not empirical evidence for the method's scientific claims.
 
+## Project stewardship and attribution
+
+AITP is created and stewarded by **LuckyGitHub777**. Public attribution should identify the repository, release/version, and—when reproducibility matters—the exact commit used. `CITATION.cff` provides machine-readable citation metadata.
+
+This attribution records stewardship of the public empirical method and implementation. It does not turn private originating context, personal interpretation, or non-empirical inspiration into scientific evidence.
+
 ## Version history
 
 - v1.1.0: first stable public release, promoted from the fully hosted-verified rc5 line after Pages deployment and production readback gates.
