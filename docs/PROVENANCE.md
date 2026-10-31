@@ -10,6 +10,7 @@ Private originating non-empirical or strategic project context is intentionally 
 
 ## Version history
 
+- v1.1.0: first stable public release, promoted from the fully hosted-verified rc5 line after Pages deployment and production readback gates.
 - v1.0.0: first deterministic public-product baseline; later independently adversarially audited and placed on release HOLD.
 - v1.1.0-rc5: hosted-corrective candidate updating the Browser UAT Playwright dependency to the real current PyPI release after GitHub runner verification exposed the invalid rc4 pin.
 - v1.1.0-rc4: corrective convergence addressing assurance semantics, protocol enforcement, accessibility/mobile UX, prediction lifecycle, and rendered-browser release gating.

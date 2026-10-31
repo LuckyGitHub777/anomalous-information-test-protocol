@@ -18,6 +18,8 @@ AITP has two browser experiences backed by one integrity doctrine.
 
 A static, synthetic, zero-telemetry demonstration that teaches the method by experience.
 
+Live: **https://luckygithub777.github.io/anomalous-information-test-protocol/**
+
 ```bash
 python run_site.py
 ```
@@ -134,9 +136,9 @@ Public-site data is synthetic. Local Laboratory working state is written under i
 
 ## Release state
 
-**v1.1.0-rc5 — corrective public-release candidate.**
+**v1.1.0 — stable public-release baseline.**
 
-Local automated, adversarial, and rendered browser gates must pass on the exact candidate. Public release is complete only after the same candidate also passes GitHub-hosted CI, Browser UAT, CodeQL review where applicable, Pages deployment, production readback, and human claims/UAT sign-off.
+The stable tag is created only after the exact commit passes local automated/adversarial/rendered-browser gates plus GitHub-hosted CI, Browser UAT, CodeQL, Pages deployment, and production readback. The rc5 V&V documents remain the preserved release-candidate evidence that earned this stable baseline.
 
 ## License
 

@@ -1,4 +1,4 @@
-# License posture — v1.1.0-rc5
+# License posture — v1.1.0
 
 AITP is prepared for **public source availability** but is **not open-source licensed** by this candidate.
 

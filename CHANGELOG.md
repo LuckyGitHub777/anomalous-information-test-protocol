@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.0 — First public release
+
+- Promotes the fully verified v1.1 corrective line to the first stable public AITP release.
+- Preserves the rc5 scientific/protocol behavior unchanged while replacing candidate version labels with stable `v1.1.0`.
+- Adds production Pages readback to the deployment workflow so a successful deployment also proves that the live site and required static assets are retrievable.
+- Keeps the guided Laboratory deliberately `DRY_RUN`-only; formal anchored studies remain explicit core/CLI workflows.
+- Maintains the permanent claims boundary: instrument V&V does not establish anomalous acquisition, an independent agent, or a specific source ontology.
+
 ## v1.1.0-rc5 — Hosted Browser UAT dependency correction
 
 - Corrected the Browser UAT development-only dependency from nonexistent `playwright==1.62.1` to current PyPI release `playwright==1.64.1` after the GitHub-hosted verification gate failed during installation.

@@ -2,7 +2,7 @@
 
 ## v1.1 corrective posture
 
-v1.1.0-rc5 is a **release candidate**, not a final release, until local + hosted + human gates close on one exact commit.
+v1.1.0 is the **stable public-release baseline** only after local + hosted + production-readback gates close on one exact commit. Any later source change requires a new candidate identity and fresh gates.
 
 ## Required local automated gate
 
