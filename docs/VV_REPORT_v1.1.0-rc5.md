@@ -1,4 +1,4 @@
-# V&V Report — v1.1.0-rc4
+# V&V Report — v1.1.0-rc5
 
 **Dependency revalidation:** 2026-10-31. The rc1 corrective scope is unchanged; rc2 refreshes immutable GitHub Action pins before hosted execution.
 
@@ -6,7 +6,7 @@
 
 ## Purpose
 
-v1.1.0-rc4 is the bounded corrective convergence produced after independent adversarial review reopened the v1.0.0 public-release gates. It does not redesign AITP. It makes assurance language, workflow enforcement, accessibility, mobile behavior, and repeat-use product semantics match the strength of the underlying evidence core.
+v1.1.0-rc5 is the bounded corrective convergence produced after independent adversarial review reopened the v1.0.0 public-release gates. It does not redesign AITP. It makes assurance language, workflow enforcement, accessibility, mobile behavior, and repeat-use product semantics match the strength of the underlying evidence core.
 
 The governing rule is:
 
@@ -21,7 +21,7 @@ The candidate closes or truthfully downscopes the v1.0 findings in four workstre
 3. **Human experience** — visible focus; keyboard-focus retention; accessible live announcements; persistent errors; mobile reflow/nav; 44 px ranking controls; irreversible-action confirmations.
 4. **Product completeness** — canonical AITP-PRED-1.1 content identity; append-only prediction adjudication; deployable public CSP meta subset; explicit hosted-parity gate.
 
-See `VV_CLOSURE_MATRIX_v1.1.0-rc4.md` for all 35 independent findings.
+See `VV_CLOSURE_MATRIX_v1.1.0-rc5.md` for all 35 independent findings.
 
 ## Local automated V&V
 
@@ -151,4 +151,4 @@ No software V&V result is H2/H3/H4 scientific evidence.
 - production security/readback reconciliation;
 - Human Authority claims/UAT sign-off.
 
-**v1.1.0-rc4 is therefore a public-release candidate, not yet the final public release.**
+**v1.1.0-rc5 is therefore a public-release candidate, not yet the final public release.**

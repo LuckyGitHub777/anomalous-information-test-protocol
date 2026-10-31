@@ -1,6 +1,6 @@
-# V&V Closure Matrix — v1.1.0-rc4
+# V&V Closure Matrix — v1.1.0-rc5
 
-This matrix traces the independent v1.0.0 findings into the corrective v1.1.0-rc4 candidate. A finding is marked **CLOSED LOCALLY** only when the corrective code/scope exists and a local regression/UAT gate exercises it. Environment-dependent production claims remain **HOSTED VERIFY** until GitHub/Pages readback.
+This matrix traces the independent v1.0.0 findings into the corrective v1.1.0-rc5 candidate. A finding is marked **CLOSED LOCALLY** only when the corrective code/scope exists and a local regression/UAT gate exercises it. Environment-dependent production claims remain **HOSTED VERIFY** until GitHub/Pages readback.
 
 | ID | v1.0 finding | v1.1 corrective disposition | Evidence state |
 |---|---|---|---|

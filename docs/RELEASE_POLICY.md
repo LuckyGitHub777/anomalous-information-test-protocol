@@ -2,7 +2,7 @@
 
 ## v1.1 corrective posture
 
-v1.1.0-rc4 is a **release candidate**, not a final release, until local + hosted + human gates close on one exact commit.
+v1.1.0-rc5 is a **release candidate**, not a final release, until local + hosted + human gates close on one exact commit.
 
 ## Required local automated gate
 

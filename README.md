@@ -83,7 +83,7 @@ python tools/vv_all.py
 Run rendered browser UAT (developer/release dependency only):
 
 ```bash
-python -m pip install playwright==1.62.1
+python -m pip install playwright==1.64.1
 python -m playwright install chromium
 python tools/browser_uat.py --chromium __playwright_managed__
 ```
@@ -124,8 +124,8 @@ See [`docs/GENERALIZED_CLAIM_TESTING.md`](docs/GENERALIZED_CLAIM_TESTING.md).
 - [GitHub operations](docs/GITHUB_OPERATIONS.md)
 - [Hosted UAT checklist](docs/HOSTED_UAT_CHECKLIST.md)
 - [Security](SECURITY.md)
-- [v1.1 V&V report](docs/VV_REPORT_v1.1.0-rc4.md)
-- [v1.1 closure matrix](docs/VV_CLOSURE_MATRIX_v1.1.0-rc4.md)
+- [v1.1 V&V report](docs/VV_REPORT_v1.1.0-rc5.md)
+- [v1.1 closure matrix](docs/VV_CLOSURE_MATRIX_v1.1.0-rc5.md)
 - [Historical v1.0 V&V](docs/VV_REPORT_v1.0.0.md)
 
 ## Privacy
@@ -134,7 +134,7 @@ Public-site data is synthetic. Local Laboratory working state is written under i
 
 ## Release state
 
-**v1.1.0-rc4 — corrective public-release candidate.**
+**v1.1.0-rc5 — corrective public-release candidate.**
 
 Local automated, adversarial, and rendered browser gates must pass on the exact candidate. Public release is complete only after the same candidate also passes GitHub-hosted CI, Browser UAT, CodeQL review where applicable, Pages deployment, production readback, and human claims/UAT sign-off.
 

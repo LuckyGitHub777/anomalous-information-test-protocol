@@ -1,6 +1,6 @@
 # V&V Report — v1.0.0
 
-> **HISTORICAL / SUPERSEDED** — This report records the original v1.0.0 local evidence. Independent adversarial V&V later reopened release gates. Do not use this report as evidence that v1.0.0 is approved for public research-instrument release. See `VV_REPORT_v1.1.0-rc4.md` for the corrective candidate.
+> **HISTORICAL / SUPERSEDED** — This report records the original v1.0.0 local evidence. Independent adversarial V&V later reopened release gates. Do not use this report as evidence that v1.0.0 is approved for public research-instrument release. See `VV_REPORT_v1.1.0-rc5.md` for the corrective candidate.
 
 
 ## Disposition

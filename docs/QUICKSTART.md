@@ -44,7 +44,7 @@ The formal workflow includes exporting the anchor artifact and separately record
 Playwright is a **development/release dependency only**:
 
 ```bash
-python -m pip install playwright==1.62.1
+python -m pip install playwright==1.64.1
 python -m playwright install chromium
 python tools/browser_uat.py --chromium __playwright_managed__
 ```

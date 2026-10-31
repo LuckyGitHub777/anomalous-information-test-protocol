@@ -1,4 +1,4 @@
-# Hosted UAT Checklist — v1.1.0-rc4
+# Hosted UAT Checklist — v1.1.0-rc5
 
 Run this checklist against the **exact commit** proposed for final public release.
 
@@ -65,7 +65,7 @@ On a trusted local machine:
 python run_lab.py
 ```
 
-- [ ] Health endpoint reports `1.1.0-rc4` and `DRY_RUN` guided scope.
+- [ ] Health endpoint reports `1.1.0-rc5` and `DRY_RUN` guided scope.
 - [ ] Foreign Host header is rejected.
 - [ ] Formal condition creation is rejected with a plain-language dry-run-only explanation.
 - [ ] Complete dry run end to end.

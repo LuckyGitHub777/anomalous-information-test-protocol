@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.0-rc5 — Hosted Browser UAT dependency correction
+
+- Corrected the Browser UAT development-only dependency from nonexistent `playwright==1.62.1` to current PyPI release `playwright==1.64.1` after the GitHub-hosted verification gate failed during installation.
+- Advanced candidate identity rather than mutating rc4 in place.
+- Preserved all rc4 protocol, evidence, claims, security, accessibility, UX, and product behavior unchanged.
+- Requires fresh local reproducibility plus GitHub-hosted CI / Browser UAT / CodeQL / Pages readback before final release.
+
 ## v1.1.0-rc4 — Public Git import simplification
 
 - Removed committed documentation screenshots so the public source tree is text-only and does not depend on stale binary captures.

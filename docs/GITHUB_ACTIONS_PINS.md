@@ -11,6 +11,6 @@ The workflows use exact full commit SHAs for external GitHub Actions.
 | `actions/upload-pages-artifact` | v5.0.0 | `fc324d3547104276b827a68afc52ff2a11cc49c9` |
 | `actions/deploy-pages` | v5.0.1 | `368f82528645a54fb793d4d04e342629a3f51346` |
 
-Rendered Browser UAT uses `playwright==1.62.1` as a pinned **development-only Python dependency** and installs its Chromium build on the hosted runner. AITP runtime remains standard-library Python with self-contained browser assets.
+Rendered Browser UAT uses `playwright==1.64.1` as a pinned **development-only Python dependency** and installs its Chromium build on the hosted runner. AITP runtime remains standard-library Python with self-contained browser assets.
 
 Pins should be re-verified against official upstream releases before a later release rather than silently floated.
