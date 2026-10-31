@@ -6,6 +6,8 @@ on:
     paths:
       - "site/**"
       - ".github/workflows/pages.yml"
+      - ".github/workflows/publish-v1.1.0.yml"
+      - "tools/finalize_release_v1_1_0.py"
   workflow_dispatch:
 
 permissions:
