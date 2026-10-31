@@ -30,5 +30,5 @@ function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','
 function downloadJSON(obj){const blob=new Blob([JSON.stringify(obj,null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='aitp-prediction-demo.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
 $('#copy-lab').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('python run_lab.py');toast('Launch command copied.')}catch{showError('Copy unavailable. Use: python run_lab.py')}});
 function repoUrl(){if(location.hostname.endsWith('.github.io')){const owner=location.hostname.split('.')[0],repo=location.pathname.split('/').filter(Boolean)[0];if(owner&&repo)return `https://github.com/${owner}/${repo}`}return null}
-const gh=$('#github-link'),url=repoUrl();if(url)gh.href=url;else gh.hidden=true;
+const gh=$('#github-link'),example=$('#example-link'),citation=$('#citation-link'),url=repoUrl();if(url){gh.href=url;example.href=url+'/blob/main/docs/WORKED_EXAMPLE.md';citation.href=url+'/blob/main/CITATION.cff'}else{gh.hidden=true;example.hidden=true;citation.hidden=true}
 resetDemo();

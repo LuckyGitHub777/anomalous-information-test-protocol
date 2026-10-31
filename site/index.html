@@ -16,7 +16,7 @@
 <header class="bar">
   <a class="brand" href="#top" aria-label="AITP home"><span class="brand-mark">A</span><span><strong>AITP</strong><small>Anomalous Information Test Protocol</small></span></a>
   <nav aria-label="Primary navigation">
-    <a href="#how">How it works</a><a href="#demo">Demo</a><a href="#uses">Use cases</a><a href="#ledger">Prediction ledger</a><a href="#inspect">Protocol</a>
+    <a href="#how">How it works</a><a href="#demo">Demo</a><a href="#value">Value</a><a href="#ledger">Prediction ledger</a><a href="#inspect">Protocol</a>
   </nav>
   <a class="nav-cta" href="#laboratory">Run locally</a>
 </header>
@@ -26,7 +26,7 @@
     <div class="shell hero-inner">
       <p class="eyebrow">Evidence before explanation</p>
       <h1>Test the claim.<br><em>Preserve the evidence.</em></h1>
-      <p class="lead">A tamper-evident method for testing whether information existed before the answer was known—without deciding what to believe first.</p>
+      <p class="lead">A local-first, tamper-evident toolkit for preserving what was fixed, said, judged, and revealed—in the correct order—before the answer was known.</p>
       <div class="actions"><a class="button primary" href="#demo">Try the demonstration</a><a class="button quiet" href="#laboratory">Run AITP locally</a></div>
       <div class="trust"><span>No accounts</span><span>No telemetry</span><span>Synthetic public demo</span><span>Inspectable method</span></div>
     </div>
@@ -40,6 +40,16 @@
       <article><b>03</b><h3>Seal the response</h3><p>The participant's response is frozen before candidates appear.</p><small>Artifact fingerprint</small></article>
       <article><b>04</b><h3>Lock judgment</h3><p>The judge commits to a ranking before the correct target is revealed.</p><small>Blinded ranking</small></article>
       <article><b>05</b><h3>Reveal & audit</h3><p>The system verifies integrity before results are eligible for analysis.</p><small>Fail-closed audit</small></article>
+    </div>
+  </section>
+
+  <section id="value" class="section shell value">
+    <div class="split-head"><div><p class="eyebrow">Tangible outputs</p><h2>What you get is a better record—not a stronger story.</h2></div><p>AITP turns a claim into inspectable artifacts that survive hindsight: what was fixed, what was said, what was judged, what was revealed, and whether the protocol stayed valid.</p></div>
+    <div class="value-grid">
+      <article><span>01</span><h3>Evidence packet</h3><p>Commitment, sealed response, candidate release, locked ranking, reveal, and tamper-evident event history.</p><small>Who knew what, and when</small></article>
+      <article><span>02</span><h3>Audit verdict</h3><p>A plain-language validity state plus the exact integrity checks that passed or failed.</p><small>Valid, invalid, and why</small></article>
+      <article><span>03</span><h3>Analysis-ready record</h3><p>Only eligible trials move into exact scoring and condition comparison; invalid trials remain preserved rather than hidden.</p><small>Evidence before interpretation</small></article>
+      <article><span>04</span><h3>Frozen prediction</h3><p>Exact wording, success/failure criteria, timing, content fingerprint, and append-only adjudication after reality answers.</p><small>No rewriting the past</small></article>
     </div>
   </section>
 
@@ -77,7 +87,7 @@
   </section>
 
   <section id="uses" class="section shell">
-    <div class="split-head"><div><p class="eyebrow">Use cases</p><h2>A general instrument for prospective claim verification.</h2></div><p>The hidden-information protocol is the core. The same evidence discipline can support other contexts where chronology, blinding, null models, and preregistration matter.</p></div>
+    <div class="split-head"><div><p class="eyebrow">Where it fits</p><h2>The method travels wherever hindsight matters.</h2></div><p>Hidden-information research is the core. The same prospective claim-integrity discipline can support adjacent contexts where chronology, blinding, null models, and preregistration matter.</p></div>
     <div class="use-grid">
       <article><span>01</span><h3>Hidden-target research</h3><p>Test whether a participant identifies information unavailable through ordinary channels.</p></article>
       <article><span>02</span><h3>Expert intuition</h3><p>Compare expert judgments against baseline or control conditions prospectively.</p></article>
@@ -118,11 +128,11 @@
 
   <section id="inspect" class="section shell inspect">
     <div class="split-head"><div><p class="eyebrow">Inspectable by design</p><h2>Trust the record, not the storyteller.</h2></div><p>AITP publishes the protocol, threat model, tests, claims policy, and deterministic release evidence so technical reviewers can challenge the instrument itself.</p></div>
-    <div class="inspect-grid"><article><h3>Protocol</h3><p>Lifecycle, role boundaries, blinding, anchoring, audit, and analysis.</p><code>docs/PROTOCOL.md</code></article><article><h3>Threat model</h3><p>Information leakage, scoring flexibility, chronology, tampering, and human factors.</p><code>docs/THREAT_MODEL.md</code></article><article><h3>V&amp;V</h3><p>Automated tests, repository boundary checks, secret lint, site UAT, and deterministic builds.</p><code>docs/VV_REPORT_v1.1.0-rc5.md</code></article></div>
-    <div class="actions"><a class="button primary" id="github-link" href="#" rel="noopener">Inspect on GitHub</a><a class="button quiet" href="#demo">Try the demo again</a></div>
+    <div class="inspect-grid"><article><h3>Protocol</h3><p>Lifecycle, role boundaries, blinding, anchoring, audit, and analysis.</p><code>docs/PROTOCOL.md</code></article><article><h3>Threat model</h3><p>Information leakage, scoring flexibility, chronology, tampering, and human factors.</p><code>docs/THREAT_MODEL.md</code></article><article><h3>V&amp;V</h3><p>Automated tests, repository boundary checks, secret lint, site UAT, and deterministic builds.</p><code>docs/VV_REPORT_v1.1.0-rc5.md</code></article><article><h3>Worked example</h3><p>A complete synthetic dry run, including the evidence chain, audit meaning, and repeat-use value.</p><code>docs/WORKED_EXAMPLE.md</code></article></div>
+    <div class="actions"><a class="button primary" id="github-link" href="#" rel="noopener">Inspect on GitHub</a><a class="button quiet" id="example-link" href="#" rel="noopener">Read worked example</a><a class="button quiet" id="citation-link" href="#" rel="noopener">Cite AITP</a></div>
   </section>
 </main>
-<footer><div class="shell footer"><div><strong>AITP</strong><p>Curiosity deserves a fair test.</p></div><div><a href="#how">Method</a><a href="#demo">Demo</a><a href="#laboratory">Laboratory</a><a href="#inspect">Evidence</a></div></div><div class="shell footer-note">Public demo uses synthetic data only. No telemetry. No accounts. No external assets.</div></footer>
+<footer><div class="shell footer"><div><strong>AITP</strong><p>Curiosity deserves a fair test.</p><small>Created and stewarded by LuckyGitHub777.</small></div><div><a href="#how">Method</a><a href="#demo">Demo</a><a href="#laboratory">Laboratory</a><a href="#inspect">Evidence</a></div></div><div class="shell footer-note">Public demo uses synthetic data only. No telemetry. No accounts. No external assets. Source-visible · All Rights Reserved.</div></footer>
 <div id="alert" class="alert" role="alert" aria-live="assertive" hidden></div><div id="toast" role="status" aria-live="polite"></div>
 <script src="app.js"></script>
 </body>

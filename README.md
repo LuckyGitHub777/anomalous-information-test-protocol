@@ -40,6 +40,17 @@ The local Laboratory interface is in [`web/`](web/) and is served by the Python 
 
 Formal anchored studies remain available through the core/CLI, where anchor evidence can be recorded and reviewed explicitly. The guided Laboratory intentionally exposes only `DRY_RUN` until formal anchor handling can be represented without overstating what the software verifies.
 
+## What AITP gives you
+
+A completed workflow produces more than a result:
+
+- an **evidence packet** showing what was committed, sealed, released, judged, and revealed;
+- an **audit verdict** showing whether the protocol remained valid and, if not, why;
+- an **analysis-ready record** where invalid trials stay preserved but are excluded from inference;
+- a **Prediction Ledger** that freezes exact wording and criteria, then appends adjudication without rewriting the original claim.
+
+See the [worked example](docs/WORKED_EXAMPLE.md) for a complete synthetic dry run from hidden target through audit.
+
 ## Protocol lifecycle
 
 **PRECOMMIT → EXTERNAL ANCHOR → RESPOND → FREEZE → RELEASE CANDIDATES → JUDGE → FREEZE → REVEAL → VERIFY → AUDIT → SCORE → PRESERVE**
@@ -140,6 +151,12 @@ Public-site data is synthetic. Local Laboratory working state is written under i
 
 The stable tag is created only after the exact commit passes local automated/adversarial/rendered-browser gates plus GitHub-hosted CI, Browser UAT, CodeQL, Pages deployment, and production readback. The rc5 V&V documents remain the preserved release-candidate evidence that earned this stable baseline.
 
+## Stewardship and citation
+
+AITP is created and stewarded by **LuckyGitHub777**. If you use the software, protocol, worked examples, or methodology in research, analysis, writing, or derivative work, cite the repository version and commit so the evidence lineage remains inspectable.
+
+Machine-readable citation metadata is provided in [`CITATION.cff`](CITATION.cff). Public scientific provenance is documented in [`docs/PROVENANCE.md`](docs/PROVENANCE.md). Private originating context is intentionally excluded from the empirical repository because it is not evidence for the method's scientific claims.
+
 ## License
 
-Source may be publicly inspected but is **not open-source licensed** in this release candidate. All rights are reserved. See [`LICENSE`](LICENSE) and [`LICENSE_DECISION.md`](LICENSE_DECISION.md).
+Source may be publicly inspected but is **not open-source licensed** in this release. All rights are reserved. See [`LICENSE`](LICENSE) and [`LICENSE_DECISION.md`](LICENSE_DECISION.md).

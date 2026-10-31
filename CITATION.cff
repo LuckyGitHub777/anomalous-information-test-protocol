@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use AITP, cite this software and preserve the version or commit used."
+title: "Anomalous Information Test Protocol (AITP)"
+type: software
+authors:
+  - name: "LuckyGitHub777"
+version: "1.1.0"
+date-released: 2026-10-31
+repository-code: "https://github.com/LuckyGitHub777/anomalous-information-test-protocol"
+url: "https://luckygithub777.github.io/anomalous-information-test-protocol/"
+abstract: "A local-first, tamper-evident toolkit for prospective hidden-information testing, prediction integrity, audit, and evidence-preserving adjudication."
+keywords:
+  - prospective claim integrity
+  - blinded testing
+  - preregistration
+  - tamper-evident evidence
+  - prediction ledger
+  - reproducibility
